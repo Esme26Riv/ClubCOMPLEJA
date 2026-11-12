@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club del Té - Experiencia Interactiva</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Club del Té</h1>
+      <p>Herramientas y bitácora interactiva para el infusionado perfecto</p>
+    </header>
+
+    <div class="grid-layout">
+      
+      <!-- Temporizador -->
+      <div class="panel">
+        <div class="panel-title">⏱️ Temporizador de Infusión</div>
+        <div class="preset-buttons">
+          <button class="btn" onclick="fijarTiempo(120)">2 min</button>
+          <button class="btn" onclick="fijarTiempo(180)">3 min</button>
+          <button class="btn" onclick="fijarTiempo(300)">5 min</button>
+        </div>
+        <div class="timer-display" id="reloj">03:00</div>
+        <div class="timer-controls">
+          <button class="btn btn-main" onclick="iniciarTemporizador()" id="btn-iniciar">Iniciar</button>
+          <button class="btn" onclick="pausarTemporizador()">Pausar</button>
+          <button class="btn" onclick="reiniciarTemporizador()">Reiniciar</button>
+        </div>
+      </div>
+
+      <!-- Calculadora -->
+      <div class="panel">
+        <div class="panel-title">⚖️ Calculadora de Dosificación</div>
+        <div class="calc-row">
+          <label for="tazas">Número de tazas (250 ml c/u):</label>
+          <input type="number" id="tazas" value="1" min="1" max="10" oninput="calcularDosis()">
+        </div>
+        <div class="results-box">
+          <div>
+            <div class="res-num" id="res-hojas">2.5 g</div>
+            <div class="res-desc">Hojas de té</div>
+          </div>
+          <div>
+            <div class="res-num" id="res-agua">250 ml</div>
+            <div class="res-desc">Agua caliente</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Catálogo de variedades -->
+      <div class="panel full-width">
+        <div class="panel-title">🍃 Catálogo por Tipo de Infusión</div>
+        <div class="filter-bar">
+          <button class="filter-btn activo" onclick="filtrar('todos', this)">Todos</button>
+          <button class="filter-btn" onclick="filtrar('energizante', this)">Energizante</button>
+          <button class="filter-btn" onclick="filtrar('relajante', this)">Relajante</button>
+          <button class="filter-btn" onclick="filtrar('digestivo', this)">Digestivo</button>
+        </div>
+        <div class="tea-cards-grid" id="contenedor-tes">
+          <!-- Generado con JS -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

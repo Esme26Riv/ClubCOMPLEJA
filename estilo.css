@@ -1,0 +1,226 @@
+:root {
+    --bg: #0b0c0e;
+    --surface: #14161b;
+    --border: #262933;
+    --gold: #cf9a33;
+    --gold-hover: #b88628;
+    --text: #f1f5f9;
+    --muted: #8e9bb0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+header h1 {
+    font-family: Georgia, serif;
+    color: var(--gold);
+    font-size: 2.4rem;
+    margin-bottom: 0.4rem;
+}
+
+header p {
+    color: var(--muted);
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.panel {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.panel-title {
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+/* Temporizador */
+.timer-display {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: monospace;
+    color: var(--text);
+    margin: 1rem 0;
+}
+
+.timer-controls,
+.preset-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    background-color: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    border-color: var(--gold);
+}
+
+.btn-main {
+    background-color: var(--gold);
+    color: #000;
+    border-color: var(--gold);
+    font-weight: 600;
+}
+
+.btn-main:hover {
+    background-color: var(--gold-hover);
+}
+
+/* Calculadora */
+.calc-row {
+    margin-bottom: 1.2rem;
+}
+
+.calc-row label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+}
+
+.calc-row input {
+    width: 100%;
+    background: #090a0c;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.results-box {
+    background: #090a0c;
+    border: 1px dashed var(--border);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.res-num {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.res-desc {
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+/* Catálogo con Filtro */
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.4rem 0.9rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.filter-btn.activo {
+    background-color: var(--gold);
+    color: #000;
+    border-color: var(--gold);
+    font-weight: 600;
+}
+
+.tea-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.tea-card {
+    background: #090a0c;
+    border: 1px solid var(--border);
+    padding: 1.2rem;
+    border-radius: 8px;
+}
+
+.tea-card h3 {
+    color: var(--gold);
+    font-family: Georgia, serif;
+    margin-bottom: 0.4rem;
+}
+
+.tea-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+}
+
+.tag {
+    display: inline-block;
+    background: #1a1d24;
+    border: 1px solid var(--border);
+    color: var(--gold);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
